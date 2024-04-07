@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  <category>
+    <pattern>*</pattern>
+    <template>I can't tell you that. XD</template>
+  </category>
+  
+  <category>
+    <pattern>why?</pattern>
+    <template>Thats a secret, I'll never tell.</template>
+  </category>
+   <category>
+    <pattern>why *</pattern>
+    <template><srai>why? <star/></srai></template>
+  </category>
+  
+  <category>
+    <pattern>Hello</pattern>
+    <template>
+        Hi. My name is chatty.What's your name?
+    </template>
+  </category>
+  
+  <category>
+    <pattern>My name is *</pattern>
+    <template>Hi <star/><split/>Nice to meet you.<delay>1</delay> Wanna hear a joke?
+            <split/><delay>1</delay>Ofcourse you do.<delay>3</delay>Never trust math teachers who use graph paper. 
+            They’re always plotting something.
+            <image>https://memesbams.com/wp-content/uploads/2018/01/18-Laughing-Really-Hard-Gif.gif</image>
+            <delay>5</delay>
+            Get it?</template>
+  </category>
+  
+  <category>
+    <pattern>im *</pattern>
+    <that>Hello</that>
+    <template>
+        <srai>MY NAME IS * <star/></srai>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>hi</pattern>
+    <template>
+        <srai>Hello <star/></srai>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>yes</pattern>
+     <template>how are you feeling? <split/>
+     <srai>feeling <star/></srai> 
+    </template>
+  </category>
+  
+  <category>
+    <pattern>I'm feeling *</pattern>
+    
+    <template>
+         <think><set name = "state"> <star/></set></think>
+         <condition name = "state" value = "happy">
+            My work here is done
+           <srai>HUGS <star/></srai> 
+         </condition>
+         
+         <condition name = "state" value = "sad">
+            <srai>SAD<star/></srai>
+         </condition>
+     </template>
+  </category>  
+         
+    <category>
+        <pattern>sad</pattern>
+        <template>
+        <button>
+            <text>how about a random fact to distract you?</text>
+            <postback>fact</postback>
+        </button>
+        <button>
+            <text>Wanna hear a song?</text>
+            <postback>happy</postback>
+        </button>
+        <button>
+            <text>Lets relax</text>
+            <postback>relax</postback>
+        </button>
+        
+        </template>
+  </category>
+  
+   
+    <category>
+        <pattern>relax</pattern>
+         <template>Lets relax<split/>
+         <srai>feeling <star/></srai> 
+        </template>
+     </category>     
+  
+  <category>
+    <pattern>relax</pattern>
+    <template>Okay now breathe with me.<split/>
+    1<delay>1</delay>
+    2<delay>1</delay>clear your mind.
+    3<delay>1</delay>imagine you are sitting in your happy place.
+    4<delay>1</delay>almost there.
+    5<delay>1</delay>now take a ddeep breathe.
+    <split/>Inhale slowly<delay>5</delay>
+    Now exhale slowly<delay>5</delay>
+    Awesome :)<delay>2</delay>
+     <srai>hugs<star/></srai>
+    </template>
+    
+  </category>
+  
+  <category>
+    <pattern>fact</pattern>
+    <template>
+        <card>
+            <image>https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Longhorndave_-_Lightning_%28by%29.jpg/1200px-Longhorndave_-_Lightning_%28by%29.jpg</image>
+            <title>A bolt of lightning contains enough energy</title>
+            <subtitle>
+            to toast 100,000 slices of bread</subtitle>
+            <button>
+                <text>more facts?</text>
+                <postback>fact2</postback>
+            </button>
+            <button>
+                <text>or a Joke</text>
+                <postback>another joke</postback>
+            </button>
+        </card>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>fact2</pattern>
+    <template>
+        <card>
+            <image>https://memesbams.com/wp-content/uploads/2018/01/20-Maniacal-Laughter-Gif.gif</image>
+            <title>Cherophobia is the word for the</title>
+            <subtitle>
+                 irrational fear of being happy
+            </subtitle>
+            <button>
+                <text>a joke?</text>
+                <postback>joke2</postback>
+            </button>
+        </card>
+    </template>
+  </category>
+  
+
+  
+  
+   <category>
+    <pattern>you talk alot</pattern>
+    <template>because thats my job<split/> my name is chatty for a reason
+    <delay>2</delay>I'm here to entertain you and not you let get bored.</template>
+  </category>
+  
+  <category>
+    <pattern>thats funny</pattern>
+    <template>Do you like it?</template>
+  </category>
+ 
+ <category>
+    <pattern>joke2</pattern>
+    <template>
+        Q. Why is Peter Pan flying all the time?
+        <delay>5</delay>
+        A. He Neverlands!
+        <delay>2</delay>
+         <image>https://memesbams.com/wp-content/uploads/2018/01/22-Crazy-Laugh-Gif.gif</image>
+        <button>
+            <text>time to go</text>
+            <postback>hugs</postback>
+            </button> 
+    </template>
+</category>
+  
+  <category>
+    <pattern>no</pattern>
+    <template>
+        <that>Get it?</that>
+        <button>
+            <text>how about another joke?</text>
+            <postback>another joke</postback>
+        </button>
+        <button>
+            <text>or maybe a song to cheer you up?</text>
+            <postback>happy</postback>
+        </button>
+    </template>
+  </category>
+  
+   <category>
+    <pattern>another joke</pattern>
+    <template>
+        
+       <ol>
+           <li>Knock Knock</li>
+           <li>Puns</li>
+           <li>jokes</li>
+       </ol>
+    </template>
+  </category>
+  
+  <category>
+        <pattern>knock knock</pattern>
+        <template>
+            Knock! Knock!<split/>
+            Who’s there?<split/>Needle.<split/>Needle who
+            <delay>2</delay>
+            Needle little help getting in the door!
+            <image>https://memesbams.com/wp-content/uploads/2018/01/15-Hilarious-Insane-Laugh-Gif.gif</image>
+        <button>
+            <text>time to go</text>
+            <postback>hugs</postback>
+            </button>
+        </template>
+      </category>
+      
+      <category>
+        <pattern>puns</pattern>
+        <template>
+            Q. Which country’s capital has the fastest-growing population?
+            <delay>3</delay>
+            A. Ireland. Every day it’s Dublin.
+            <image>https://memesbams.com/wp-content/uploads/2018/01/25-Person-Laughing-Gif.gif</image>
+            <button>
+            <text>time to go</text>
+            <postback>hugs</postback>
+            </button>
+        </template>
+      </category>
+      
+       <category>
+        <pattern>jokes</pattern>
+        <template>
+            When I was teaching kindergarten and had a cold, I would often get laryngitis with it. One day a student asked me, “Do you have a frog in your nose?”
+            <image>https://memesbams.com/wp-content/uploads/2018/01/18-Laughing-Really-Hard-Gif.gif</image>
+            <button>
+                <text>time to go</text>
+                <postback>hugs</postback>
+            </button>
+        </template>
+        
+      </category>
+  
+     <category>
+        <pattern>happy</pattern>
+        <template>
+           <video>https://www.youtube.com/watch?v=bmhbqKT7ONo.mp4</video>
+            <button>
+            <text>time to go</text>
+            <postback>hugs</postback>
+            </button>
+        </template>
+      </category>
+ 
+  <category>    
+    <pattern>okay</pattern>
+    <template>okay :) <delay>2</delay> are you satisfied with me?
+    <reply>
+        <text>yes</text>
+        <postback>hugs</postback>
+    </reply>
+    <reply>
+        <text>no</text>
+        <postback>no</postback>
+    </reply>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>hugs</pattern>
+    <template>
+        Toodles
+        <image>https://media.giphy.com/media/cSUPqInsC4Csw/giphy.gif</image>
+    </template>
+  </category>
+  
+  
+</aiml>
